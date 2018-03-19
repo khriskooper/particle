@@ -1,0 +1,59 @@
+#resume {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 960px;
+    @media only screen and (min-width: $cut) {
+        width: 80%;
+    }
+}
+
+
+.find-out {
+    text-align: center;
+    font-size: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    p {
+        font-size: 16px;
+    }
+    @media only screen and (min-width: $cut) {
+        flex-wrap: nowrap;
+        font-size: 75px;
+    }
+}
+
+.resume-link {
+    display: block;
+    width: 100px;
+    margin: 10px 0px;
+    padding: 5px;
+    color: #fff;
+    background-color: cyan;
+    border: 1px solid $main;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-out,
+                background-color 0.3s ease-out,
+                border-color 0.3s ease-out;
+    &:hover {
+      background-color: $cyan;
+      border-color: $cyan;
+      color: #fff;
+      transition: color 0.3s ease-in,
+                  background-color 0.3s ease-in,
+                  border-color 0.3s ease-in;
+    }
+    &:active {
+      background-color: $cyan;
+      border-color: $cyan;
+      color: #fff;
+      transition: color 0.3s ease-in,
+                  background-color 0.3s ease-in,
+                  border-color 0.3s ease-in;
+    }
+  }
