@@ -67,6 +67,14 @@ gulp.task('imagemin', function() {
 		.pipe(gulp.dest('assets/img/'));
 });
 
+/*
+ * Copy Resume
+ */
+gulp.task('resume', function() {
+	gulp.src('src/resume.pdf')
+	.pipe(gulp.dest('assets/'));
+ });
+
 /**
  * Compile and minify js
  */
@@ -86,4 +94,4 @@ gulp.task('watch', function() {
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], ['jekyll-rebuild']);
 });
 
-gulp.task('default', ['js', 'sass', 'fonts', 'browser-sync', 'watch']);
+gulp.task('default', ['js', 'sass', 'fonts', 'resume', 'browser-sync', 'watch']);

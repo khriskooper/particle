@@ -12,8 +12,9 @@
 
 .caption {
   text-align: center;
-  float: right;
   font-style: italic;
+  width: 96%;
+  padding-bottom:12px;
 }
 
 .list-heading {
@@ -52,7 +53,6 @@
 .contents-right {
   @media only screen and (min-width: $cut) {
     float: right;
-    margin-top: -5%;
     width: 48%;
   }
 }
@@ -62,22 +62,12 @@
     float: right;
     width: 48%;
   }
-  img {
-    @media only screen and (min-width: $cut) {
-      float: right;
-    }
-  }
 }
 
 .images-left {
   @media only screen and (min-width: $cut) {
     float: left;
     width: 48%;
-  }
-  img {
-    @media only screen and (min-width: $cut) {
-      float: left;
-    }
   }
 }
 
