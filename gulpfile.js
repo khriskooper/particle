@@ -71,7 +71,7 @@ gulp.task('imagemin', function() {
  * Copy Resume
  */
 gulp.task('resume', function() {
-	gulp.src('src/resume.pdf')
+	gulp.src('src/E Garber Product Resume - April 2018.pdf')
 	.pipe(gulp.dest('assets/'));
  });
 

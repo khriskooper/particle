@@ -1,0 +1,81 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    private HashMap < char, Node > roots = new HashMap();
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in .nextInt();
+        for (int i = 0; i < n; i++) {
+            String op = in .next();
+            String contact = in .next();
+            if ("add".equals(op)) {
+                addName(contact);
+            } else if ("find".equals(op)) {
+                countDescendants(contact);
+            }
+        }
+    }
+
+    private static void addName(String name) {
+        char[] chars = name.toCharArray();
+        HashMap set = roots;
+        String res;
+        for (char ch: chars) {
+            res += ch;
+            if (!set.contains(ch)) {
+                Node node = set.get(ch);
+                node.add(ch, new Node());
+                incrementAncestorsCounts(res);
+            }
+            set = node.getChildren();
+        }
+    }
+
+    // better to get rid of this duplication and do the counting in calling loop
+    private static void incrementAncestorsCounts(String res) {
+        char[] chars = name.toCharArray();
+        HashMap set = roots;
+        for (char ch: chars) {
+            Node node = set.get(ch);
+            node.incrementDescendantCount();
+            set = node.getChildren();
+        }
+    }
+
+    private int countDescendants(String contact) {
+        char[] chars = name.toCharArray();
+        HashMap set = roots;
+        for (char ch: chars) {
+            if (!set.contains(ch)) {
+                Node node = set.get(ch);
+            }
+            set = node.getChildren();
+            descendantCount = node.getDescendantCount();
+        }
+        return descendantCount;
+    }
+
+
+    public class Node {
+        private HashMap < char, Node > children = new HashMap();
+        private int descendantCount;
+
+        public void incrementDescendantCount() {
+            this.descendantCount++;
+        }
+
+        public int getDescendantCount() {
+            return this.descendantCount;
+        }
+
+        public HashMap < char, Node > getChildren() {
+            return this.children;
+        }
+    }
+}
